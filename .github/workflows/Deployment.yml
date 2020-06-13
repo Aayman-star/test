@@ -36,7 +36,7 @@ jobs:
       with:
           cmd: build # will run `yarn build` command
     - uses: borales/actions-yarn@v2.0.0
-        with:
+      with:
           cmd: test
       
     - name: Install Surge
