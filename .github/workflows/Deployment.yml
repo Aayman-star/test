@@ -33,7 +33,7 @@ jobs:
       with:
         cmd: Install
     - uses: borales/actions-yarn@v2.0.0
-        with:
+      with:
           cmd: build # will run `yarn build` command
     
     - name: Build React App
