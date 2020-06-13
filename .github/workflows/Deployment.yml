@@ -7,8 +7,7 @@ name: Deploy to Surge
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -29,9 +28,13 @@ jobs:
         node-version: 12 
 
   # Runs a set of commands using the runners shell
-    - uses: borales/actions/yarn@v2.0.0
+    - uses: actions/checkout@v2
+    - uses: borales/actions-yarn@v2.0.0
       with:
         cmd: Install
+    - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build # will run `yarn build` command
     
     - name: Build React App
       run: yarn build
